@@ -46,7 +46,7 @@ def on_connect(client, userdata, flags, rc):
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-	global text,font,color,bgcolor,probe
+	global text,font,color,bgcolor,probe,x
 	
 	print("on_message: %s %s" % (msg.topic,msg.payload))
 	try:
@@ -62,7 +62,7 @@ def on_message(client, userdata, msg):
 			color=j["color"]
 			bgcolor=j["bgcolor"]
 			text=j["text"]
-			
+			x = probe.panel_w
 			panel_clear(web2pil(j["bgcolor"]),probe.panel_w,probe.panel_h)
 
 		if j["cmd"]=="clear":
