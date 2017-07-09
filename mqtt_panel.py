@@ -90,7 +90,7 @@ print "Panel size: %d x %d\n" % (probe.panel_w, probe.panel_h)
 
 broker="www.tanzolab.it"
 port=1883
-topic="acmesystems/mqtt_panel/%s/cmd" % (getmac("wlan0"))
+topic="tanzolab/mqtt_panel/%s/cmd" % (getmac("wlan0"))
 
 client = mqtt.Client()
 client.on_connect = on_connect
